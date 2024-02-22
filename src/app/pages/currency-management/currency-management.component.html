@@ -1,7 +1,7 @@
 
 <div id="container">
     <div class="form-container">
-      <h1>Create Currency</h1>
+      <h1 class="C">Create Currency</h1>
       <form [formGroup]="currencyForm" (ngSubmit)="onCreateSubmit()">
         <label>
           Currency Name:
@@ -9,11 +9,11 @@
         </label>
         <label>
             Currency Memo:
-            <input type="text" formControlName="currencyMemo" [(ngModel)]="creationData.currencyMemo">
+            <input type="text" formControlName="currencyMemo" [(ngModel)]="creationData.currencyMemo" maxlength="4">
         </label>
         <label>
             Symbol:
-            <input type="text" formControlName="symbol" [(ngModel)]="creationData.symbol">
+            <input type="text" formControlName="symbol" [(ngModel)]="creationData.symbol" maxlength="1">
           </label>
         <label>
             Value:
@@ -30,11 +30,11 @@
 
 
     <div class="second-form-container">
-        <h1>Delete Currency</h1>
+        <h1 class="D">Delete Currency</h1>
         <form [formGroup]="deleteCurrencyForm" (ngSubmit)="onDeleteSubmit()">
           <label>
             Currency id:
-            <input type="text" formControlName="currencyName" [(ngModel)]="deletionData.currencyId">
+            <input type="number" formControlName="currencyName" [(ngModel)]="deletionData.currencyId">
           </label>
           
           <button type="submit" [disabled]="deleteCurrencyForm.invalid">Delete Currency</button>

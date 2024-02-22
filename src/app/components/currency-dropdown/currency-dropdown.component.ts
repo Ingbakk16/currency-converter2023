@@ -33,15 +33,7 @@ export class CurrencyDropdownComponent implements OnInit {
     this.isOpen = false;
   }
 
-  markAsFavorite(currency: CurrencyForDisplay) {
-    const index = this.favorites.findIndex((fav) => fav.currencyId === currency.currencyId);
-    if (index === -1) {
-      this.favorites.push(currency);
-    } else {
-      this.favorites.splice(index, 1);
-    }
-  }
-
+ 
   getCurrencies() {
     this.currencyService.getCurrencies().subscribe({
       next: (response) => {

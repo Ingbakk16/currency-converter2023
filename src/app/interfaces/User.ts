@@ -32,7 +32,7 @@ export interface User {
     Inactive = 'Inactive',
   }
   
-   enum Role {
+export enum Role {
     User = 1,
     Admin = 0,
   }

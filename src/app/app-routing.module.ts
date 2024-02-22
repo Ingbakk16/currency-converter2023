@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { userNotLoggedGuard } from './guards/user-not-logged.guard';
 import { loggedUserGuard } from './guards/logged-user.guard';
+import { adminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
 
@@ -36,7 +37,7 @@ const routes: Routes = [
 
   {
     path:"currency-management",
-    canActivate: [loggedUserGuard],
+    canActivate: [adminGuard],
     loadChildren: ()=> import('./pages/currency-management/currency-management.module').then(m => m.CurrencyManagementModule)
   },
 
