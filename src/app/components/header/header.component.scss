@@ -1,0 +1,37 @@
+@use "./../../../assets/Style/variables.scss";
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: variables.$color-principal-500;
+
+    #logo{
+        height: 80px;
+    }
+}
+
+.text{
+
+    color: white;
+}
+
+.border{
+
+    border-radius: 2px;
+    border-color: white;
+}
+
+
+.logo-button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  .logo-button img {
+    display: block; /* Ensures the image doesn't leave space for descenders */
+    width: 100%; /* Makes the image fill the button horizontally */
+    height: auto; /* Maintains the aspect ratio of the image */
+  }

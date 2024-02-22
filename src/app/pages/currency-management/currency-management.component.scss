@@ -1,0 +1,24 @@
+@use "./../../../assets/Style/forms.scss";
+@use "./../../../assets/Style/variables.scss";
+
+
+#container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Change flex direction to column */
+    overflow: hidden;
+  }
+
+  .second-form-container {
+    max-width: 400px;
+    border-radius: 8px;
+    background-color: variables.$color-fondo; /* Apply background to both containers */
+    padding: 50px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Add margin bottom to create space between containers */
+  }
+
+
+ 

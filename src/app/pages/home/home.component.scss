@@ -1,0 +1,91 @@
+@use "./../../../assets/Style/forms.scss";
+@use "./../../../assets/Style/variables.scss";
+
+.Logo-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25vh;
+    background-color:variables.$color-fondo ;
+    gap: 30px;
+    
+
+}
+
+.Welcome-container{
+
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  background-color: variables.$color-fondo;
+
+}
+
+.H3-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 5vh;
+    
+
+}
+
+.Button-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Button-class{
+
+  flex-direction: row;
+  margin: 0 10px; /* Adjust the margin as needed */
+  
+
+}
+
+#logo-full{
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+
+}
+
+#Welcome-h1,#Welcome-h3{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#Welcome-h1{
+
+  font-size: 42px;
+  font-style: initial;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 15vh;
+
+}
+
+#Welcome-h3{
+
+  flex-direction: column;
+  
+
+}
+

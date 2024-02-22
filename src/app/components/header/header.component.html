@@ -1,0 +1,14 @@
+<header class="border">
+  <button (click)="toggleSidebar()" class="logo-button">
+    <img id="logo" src="./../../../assets/Img/Logos/LogoConvertor-Alone.svg" alt="logo">
+  </button>
+  <app-sidebar *ngIf="isLoggedIn()"></app-sidebar>
+  <span class="text" *ngIf="isLoggedIn()">
+    <ng-container *ngIf="isPremiumUser$ | async; else conversionsDisplay">
+      Premium User
+    </ng-container>
+    <ng-template #conversionsDisplay>
+      {{ (remainingConversions$ | async) }} Conversions Left
+    </ng-template>
+  </span>
+</header>

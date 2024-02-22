@@ -1,0 +1,68 @@
+@use "./../../../assets/Style/forms.scss";
+@use "./../../../assets/Style/variables.scss";
+
+.dropdown{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-toggle{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+  & img{
+
+    height: 15px;
+  }
+}
+
+.favorite img {
+  fill: red;
+}
+
+button{
+
+  width: 60%;
+  gap: 5px;
+
+
+}
+
+.dropdown-menu {
+
+  width: 60%;
+  
+}
+
+.currency-item {
+  cursor: pointer;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.currency-item:hover {
+  background-color: variables.$color-principal-300;
+}
+
+
+.currency-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-toggle img {
+  height: 15px;
+  transition: transform 0.3s ease;
+}

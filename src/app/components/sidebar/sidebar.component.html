@@ -1,0 +1,14 @@
+<div class="sidebar" [ngClass]="{ 'active': isSidebarOpen }">
+  <button class="close-button" (click)="closeSidebar()">X</button>
+  <ul>
+    <li *ngIf="isUserAdmin">
+      <a routerLink="/currency-management" (click)="closeSidebar()">Manage Currencies</a>
+    </li>
+    <li *ngIf="!isPremiumUser">
+      <a (click)="upgradeToPremium(); ">Upgrade to Premium</a>
+    </li>
+    <li>
+      <a (click)="logout(); closeSidebar()">Logout</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,49 @@
+<div>
+    <div class="logo-div">
+
+        <img id="logo-full"  src="./../../../assets/Img/Logos/LogoConvertor-Letters.svg" alt="Full-logo">
+
+    </div>
+
+    <div class="selector-div">
+
+        <app-currency-dropdown [(selectedCurrencyId)]="conversionDto.SourceCurrencyId"></app-currency-dropdown>
+    </div>
+
+
+    <div class="input-div">
+        <input type="number" placeholder="Enter amount" class="no-spin" [(ngModel)]="conversionDto.Amount" (keypress)="isNumberKey($event)">
+      </div>
+
+
+    <div class="selector-div">
+
+        <app-currency-dropdown [(selectedCurrencyId)]="conversionDto.TargetCurrencyId"></app-currency-dropdown>
+
+        
+
+    </div>
+
+    <div *ngIf="conversionResult !== null" class="result-div">
+        Conversion Result: {{ conversionResult }}
+    </div>
+
+    <div *ngIf="showError" class="error-message">
+        An error occurred during the currency conversion. Please try again later.
+      </div>
+
+   
+
+    
+   
+    <div class="button-div">
+
+        <button (click)="convertCurrency()">Convert</button>
+
+    </div>
+
+
+    
+
+
+</div>

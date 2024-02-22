@@ -1,0 +1,11 @@
+<div class="dropdown">
+  <button class="dropdown-toggle" (click)="toggleDropdown()">
+    <span>{{ selectedCurrencyId ? getCurrenyName(selectedCurrencyId) : 'Select Currency' }}</span>
+    <img src="./../../../assets/Img/Icons/down-chevron.svg" [class.rotate]="isOpen">
+  </button>
+  <ul class="dropdown-menu" *ngIf="isOpen">
+    <li *ngFor="let currency of currencies" (click)="selectCurrency(currency)" class="currency-item">
+      {{ currency.currencyName }}
+    </li>
+  </ul>
+</div>

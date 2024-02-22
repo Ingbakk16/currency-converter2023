@@ -1,0 +1,48 @@
+
+<div id="container">
+    <div class="form-container">
+      <h1>Create Currency</h1>
+      <form [formGroup]="currencyForm" (ngSubmit)="onCreateSubmit()">
+        <label>
+          Currency Name:
+          <input type="text" formControlName="currencyName" [(ngModel)]="creationData.currencyName">
+        </label>
+        <label>
+            Currency Memo:
+            <input type="text" formControlName="currencyMemo" [(ngModel)]="creationData.currencyMemo">
+        </label>
+        <label>
+            Symbol:
+            <input type="text" formControlName="symbol" [(ngModel)]="creationData.symbol">
+          </label>
+        <label>
+            Value:
+            <input type="text" formControlName="value" [(ngModel)]="creationData.value">
+        </label>
+
+        <button type="submit" [disabled]="currencyForm.invalid">Create Currency</button>
+      </form>
+      <div *ngIf="createSuccessMessageVisible" class="success-message">
+        Currency successfully created!
+      </div>
+    </div>
+
+
+
+    <div class="second-form-container">
+        <h1>Delete Currency</h1>
+        <form [formGroup]="deleteCurrencyForm" (ngSubmit)="onDeleteSubmit()">
+          <label>
+            Currency id:
+            <input type="text" formControlName="currencyName" [(ngModel)]="deletionData.currencyId">
+          </label>
+          
+          <button type="submit" [disabled]="deleteCurrencyForm.invalid">Delete Currency</button>
+        </form>
+        <div *ngIf="deleteSuccessMessageVisible" class="success-message">
+          Currency successfully deleted!
+        </div>
+      </div>
+
+
+  </div>

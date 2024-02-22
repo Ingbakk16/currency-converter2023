@@ -1,0 +1,29 @@
+<div id="container">
+    <div class="form-container">
+        <h1>Registrarse</h1>
+        <p>
+            Completa los campos para crear una cuenta.
+        </p>
+        <form #registerForm="ngForm" (ngSubmit)="register()">
+            <label for="username" class="sr-only">Nombre de usuario</label>
+            <input type="text" name="username" id="username" placeholder="Usuario" autocomplete="username" minlength="4" required [(ngModel)]="registerData.UserName" #username="ngModel">
+            <p class="error" *ngIf="username.invalid && (username.touched || username.dirty)">Ingrese un nombre de usuario válido</p>
+            <label for="email" class="sr-only">Correo Electrónico</label>
+            <input type="email" name="email" id="email" placeholder="Correo Electrónico" autocomplete="email" required [(ngModel)]="registerData.Email" #email="ngModel">
+            <p class="error" *ngIf="email.invalid && (email.touched || email.dirty)">Ingrese un correo electrónico válido</p>
+            <label for="firstName" class="sr-only">Nombre</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Nombre" autocomplete="given-name" minlength="3" required [(ngModel)]="registerData.FirstName" #firstName="ngModel">
+            <p class="error" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">Ingrese un nombre válido</p>
+            <label for="lastName" class="sr-only">Apellido</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Apellido" autocomplete="family-name" minlength="3" required [(ngModel)]="registerData.LastName" #lastName="ngModel">
+            <p class="error" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">Ingrese un apellido válido</p>
+            <label for="password" class="sr-only">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="new-password" minlength="8" required [(ngModel)]="registerData.Password" #password="ngModel">
+            <p class="error" *ngIf="password.invalid && (password.touched || password.dirty)">La contraseña debe tener al menos 8 caracteres</p>
+            <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+            <img class="spinner" src="./../../../assets/Img/icons/loader.svg" alt="cargando" *ngIf="cargando()">
+            <p *ngIf="errorRegister()" class="error">Error en el registro</p>
+        </form>
+        <p>¿Ya tenés una cuenta? - <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Iniciar sesión</a></p>
+    </div>
+</div>
